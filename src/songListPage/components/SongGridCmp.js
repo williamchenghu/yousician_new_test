@@ -16,7 +16,7 @@ const SongGridCmp = ({ songDetails, onChangeRating }: Props) => {
   return (
     <div>
       <div>
-        <img src={logo} alt="Logo" className="logo" />
+        <LogoCmp logo={logo} />
       </div>
       <div>{/* <LevelChartCmp level={songDetails.level} /> */}</div>
       <div>

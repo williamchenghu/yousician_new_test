@@ -4,7 +4,7 @@ import SongGridCmp from './SongGridCmp';
 import styled from 'styled-components';
 
 const Logo = styled.div`
-  background-color: ${props => props.theme.color.background.black};
+  background-color: ${props => props.theme.color.background.primary};
   height: ${props => props.theme.space.single.s};
 `;
 

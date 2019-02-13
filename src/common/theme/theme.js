@@ -1,10 +1,10 @@
 const px = {
   none: '0px',
-  xs: '4px',
-  s: '8px',
-  m: '16px',
-  l: '24px',
-  xl: '32px'
+  xs: '8px',
+  s: '16px',
+  m: '32px',
+  l: '64px',
+  xl: '96px'
 };
 
 const fonts = {
@@ -108,7 +108,7 @@ const main = {
   border: {
     type: {
       default: '0',
-      round: '3px'
+      round: '5px'
     }
   }
 };
