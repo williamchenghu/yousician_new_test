@@ -1,14 +1,14 @@
 // @flow
 
-import React, { Fragment } from 'react'
-import { ThemeProvider } from 'styled-components'
-import JssProvider from './JssProvider'
-import GlobalStyles from './GlobalStyles'
-import main from './theme'
+import React, { Fragment } from 'react';
+import { ThemeProvider } from 'styled-components';
+import JssProvider from './JssProvider';
+import GlobalStyles from './GlobalStyles';
+import main from './theme';
 
 type Props = {
-  children: any,
-}
+  children: any
+};
 
 export default ({ children }: Props) => (
   <JssProvider>
@@ -19,4 +19,4 @@ export default ({ children }: Props) => (
       </Fragment>
     </ThemeProvider>
   </JssProvider>
-)
+);
