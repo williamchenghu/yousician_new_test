@@ -1,7 +1,7 @@
 // @flow
 import type { RecordOf, OrderedMap } from 'immutable';
 
-export type Key = string;
+type Key = string;
 
 export type SongProps = {
   artist: string,
@@ -11,5 +11,5 @@ export type SongProps = {
   rating: number
 };
 
-export type Song = RecordOf<SongProps>;
+type Song = RecordOf<SongProps>;
 export type Songs = OrderedMap<Key, Song>;

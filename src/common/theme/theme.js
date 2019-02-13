@@ -34,23 +34,12 @@ const colors = {
     '600': '#4fc514'
   },
   gray: {
-    '600': '#878789',
-    '500': '#9E9888',
-    '400': '#ABA698',
-    '300': '#C7C4BB',
-    '200': '#DBEAFF',
-    '100': '#F1F0EE'
+    '300': '#404248',
+    '200': '#727275',
+    '100': '#DBEAFF'
   },
   neutral: {
     '1000': '#000000',
-    '900': '#222222',
-    '700': '#6D6E71',
-    '600': '#999A9C',
-    '500': '#A7A8AA',
-    '400': '#C5C5C6',
-    '300': '#E2E2E3',
-    '200': '#F0F0F1',
-    '100': '#F2F2F2',
     '0': '#FFFFFF'
   },
   red: {
@@ -58,58 +47,26 @@ const colors = {
   }
 };
 
-const saturation = {
-  default: 700,
-  primary: 600,
-  neutral: 500,
-  secondary: 400
-};
-
 const main = {
   fonts,
   colors,
-  saturation,
   color: {
     heading: {
-      dark: colors.neutral[1000],
-      neutral: colors.gray[saturation.neutral],
       light: colors.neutral[0]
     },
     text: {
-      dark: colors.neutral[1000],
-      darkish: colors.neutral[900],
-      neutral: colors.gray[saturation.neutral],
+      dark: colors.gray[300],
       light: colors.neutral[0]
     },
     background: {
       black: colors.neutral[1000],
-      dark: colors.neutral[300],
-      medium: colors.gray[200],
-      light: colors.neutral[100],
-      white: colors.neutral[0],
+      primary: colors.green[600],
       transparent: 'transparent'
     },
     icon: {
-      primary: colors.neutral[200],
-      dark: colors.neutral[700],
-      light: colors.gray[100],
-      disabled: colors.neutral[500]
-    },
-    ui: {
-      primary: colors.green[saturation.primary],
-      secondary: colors.green[saturation.secondary],
-      default: colors.green[saturation.default],
-      light: colors.green[100],
-      disabled: colors.neutral[400],
-      error: colors.red[600],
-      success: colors.green[600]
-    },
-    link: {
-      default: colors.green[saturation.default]
-    },
-    border: {
-      default: colors.gray[200],
-      white: colors.neutral[0]
+      primary: colors.green[600],
+      dark: colors.gray[200],
+      light: colors.gray[100]
     },
     transparent: {
       medium: 'rgba(0, 0, 0, 0.03)',
@@ -152,20 +109,6 @@ const main = {
     type: {
       default: '0',
       round: '3px'
-    }
-  }
-};
-
-export const green = {
-  ...main,
-  color: {
-    ...main.color,
-    ui: {
-      ...main.color.ui,
-      primary: colors.green[600]
-    },
-    icon: {
-      ...main.color.icon
     }
   }
 };

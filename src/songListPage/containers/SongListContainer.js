@@ -1,7 +1,7 @@
 // @flow
 import { connect } from 'react-redux';
-import { getSongList } from '../duck/songlist';
-import SongList from './SongList';
+import { getSongList } from '../../duck/songlist';
+import SongList from '../components/SongList';
 
 export default connect(
   state => ({

@@ -1,4 +1,4 @@
-// @flow
+// @ flow
 import { Record, List, type RecordOf, OrderedMap } from 'immutable';
 import { createAction } from 'redux-actions';
 import apiService from '../service/songsApi';

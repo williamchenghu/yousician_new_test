@@ -11,10 +11,10 @@ export default createGlobalStyle`
   }
   
   body {
-    background: ${props => props.theme.color.background.light};
+    background: ${props => props.theme.color.background.black};
     font-family: ${props => props.theme.fonts.family.body};
     font-size: ${defaultSize};
-    color: ${props => props.theme.color.text.neutral};
+    color: ${props => props.theme.color.text.light};
     padding: 0;
     margin: 0;
   }
