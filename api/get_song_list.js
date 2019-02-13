@@ -1,4 +1,4 @@
-const template = require('../__mock__/songList.json');
+const template = require('./__mock__/songList.json');
 
 module.exports = {
   path: '/api/songlist/',

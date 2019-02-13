@@ -1,5 +1,7 @@
-import { createGlobalStyle } from 'styled-components'
-import { defaultSize } from './theme'
+//flow
+
+import { createGlobalStyle } from 'styled-components';
+import { defaultSize } from './theme';
 
 export default createGlobalStyle`
   * {
@@ -45,4 +47,4 @@ export default createGlobalStyle`
     font-style: italic;
     letter-spacing: -0.3px;
   }
-`
+`;
