@@ -1,15 +1,25 @@
 // @flow
 import React from 'react';
-
 import PieChart from 'react-minimal-pie-chart';
-import PropTypes from 'prop-types';
+import styled from 'styled-components';
+
+const Donut = styled.div`
+  & > *:first-child {
+    height: ${props => props.theme.space.single.xl};
+  }
+  & > *:last-child {
+    position: relative;
+    text-align: center;
+    top: -2em;
+  }
+`;
 
 type Props = {
   level: number
 };
 const LevelChartCmp = ({ level }: Props) => {
   return (
-    <div className="donut-level">
+    <Donut>
       <PieChart
         className="donut"
         data={[
@@ -21,8 +31,8 @@ const LevelChartCmp = ({ level }: Props) => {
         lengthAngle={-360}
         animate={true}
       />
-      <div className="number">{level}</div>
-    </div>
+      <div>{level}</div>
+    </Donut>
   );
 };
 

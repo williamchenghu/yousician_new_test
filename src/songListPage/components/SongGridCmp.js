@@ -1,11 +1,29 @@
 // @flow
 import React from 'react';
-import PropTypes from 'prop-types';
-import logo from '../../common/assets/fingerprint-white.png';
-import Rating from 'react-rating';
+import styled from 'styled-components';
+import RatingCmp from '../../common/components/RatingCmp';
 import LevelChartCmp from '../../common/components/LevelChartCmp';
 import LogoCmp from '../../common/components/LogoCmp';
 import type { SongProps } from '../../common/type/songs';
+
+const SongGrid = styled.div`
+  text-align: center;
+  display: flex;
+  max-width: 60%;
+  margin-top: ${props => props.theme.space.single.l};
+  * {
+    flex-grow: 1;
+    text-align: center;
+    flex-shrink: 0;
+    margin: auto;
+  }
+  & > *:first-child {
+    flex-grow: ${props => props.theme.space.single.xl};
+  }
+  & > *:last-child {
+    flex-grow: 0;
+  }
+`;
 
 type Props = {
   onChangeRating: Function,
@@ -14,29 +32,20 @@ type Props = {
 
 const SongGridCmp = ({ songDetails, onChangeRating }: Props) => {
   return (
-    <div>
-      <div>
-        <LogoCmp logo={logo} />
-      </div>
-      <div>{/* <LevelChartCmp level={songDetails.level} /> */}</div>
+    <SongGrid>
+      <LogoCmp />
+      <LevelChartCmp level={songDetails.level} />
       <div>
         <div>{songDetails.title}</div>
         <div>
           <div>
-            <Rating
-              id="rating"
-              initialRating={songDetails.rating}
-              emptySymbol={<i className="material-icons">star_border</i>}
-              fullSymbol={<i className="material-icons">star</i>}
-              onChange={rate => onChangeRating(songDetails, rate)}
-              fractions={2}
-            />
+            <RatingCmp rating={songDetails.rating} changeRate={() => {}} />
           </div>
 
           <div>{songDetails.artist}</div>
         </div>
       </div>
-    </div>
+    </SongGrid>
   );
 };
 

@@ -1,6 +1,7 @@
 // @flow
 import React from 'react';
 import styled from 'styled-components';
+import logo from '../assets/fingerprint-white.png';
 
 const Logo = styled.img`
   background: ${props => props.theme.color.background.primary};
@@ -9,6 +10,6 @@ const Logo = styled.img`
   border-radius: ${props => props.theme.border.type.round};
 `;
 
-const LogoCmp = ({ logo }: string) => <Logo src={logo} alt="Logo" />;
+const LogoCmp = () => <Logo src={logo} alt="Logo" />;
 
 export default LogoCmp;
