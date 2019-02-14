@@ -6,6 +6,7 @@ Below you will find some information on how to perform common tasks.<br>
 
 - [Folder Structure](#folder-structure)
 - [Available Scripts](#available-scripts)
+  - [yarn install](#yarn-install)
   - [yarn start](#yarn-start)
   - [yarn run storybook](#yarn-run-storybook)
   - [yarn run cypress](#yarn-run-cypress)
@@ -48,6 +49,10 @@ my-app/
 ## Available Scripts
 
 In the project directory, you can run:
+
+### `yarn install`
+
+Install all dependencies before runing the project.
 
 ### `yarn start`
 
