@@ -1,4 +1,4 @@
-This is a song privde web app. The project designed to be easy to scaled and add more features.
+This is a web app for the list of songs and musics in database. This project was designed thoroughly to satisfy both future scalability and feature extensabilities.
 
 Below you will find some information on how to perform common tasks.<br>
 
