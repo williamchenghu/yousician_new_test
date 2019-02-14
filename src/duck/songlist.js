@@ -1,5 +1,5 @@
 // @ flow
-import { Record, List, type RecordOf, OrderedMap } from 'immutable';
+import { Record, type RecordOf, OrderedMap } from 'immutable';
 import { createAction } from 'redux-actions';
 import apiService from '../service/songsApi';
 import type { Songs } from '../common/type/songs';

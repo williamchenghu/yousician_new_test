@@ -1,7 +1,7 @@
 // @flow
 
 import Chance from 'chance';
-import { List, Map, OrderedMap } from 'immutable';
+import { OrderedMap } from 'immutable';
 import type { Songs, Song } from '../common/type/songs';
 import { get, put } from '../common/utils/api';
 

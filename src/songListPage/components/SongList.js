@@ -2,7 +2,6 @@
 import React, { PureComponent } from 'react';
 import SongGridCmp from './SongGridCmp';
 import styled from 'styled-components';
-import InputBase from '@material-ui/core/InputBase';
 import type { Songs, Song } from '../../common/type/songs';
 import LevelDropdownOptionList from '../../common/utils/list';
 import StyledSelect from '../../common/styled_components/SimpleSelect';
