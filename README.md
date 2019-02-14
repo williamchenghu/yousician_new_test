@@ -72,7 +72,7 @@ Open [http://localhost:9001](http://localhost:9001) to view it in the browser.
 ### `yarn run test-e2e`
 
 Launches the test runner in the interactive watch mode.<br>
-**Note: In order to run cypress, awaly keep the project runing on [http://localhost:3000](http://localhost:3000) first**
+**Note: In order to run cypress, always keep the project runing on [http://localhost:3000](http://localhost:3000) before hand**
 
 ## Main libraries
 

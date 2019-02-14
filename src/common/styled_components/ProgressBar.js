@@ -25,7 +25,7 @@ const Progressing = styled.div`
 
 const ProgressBar = () => (
   <Progressing>
-    <p>Trying my best to loading for u</p>
+    <p>Trying my best to loading for you</p>
     <StyledProgressBar />
   </Progressing>
 );

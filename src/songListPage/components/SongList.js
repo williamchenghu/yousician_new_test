@@ -97,11 +97,13 @@ class SongList extends PureComponent<Props, State> {
           <StyledSearchBar
             data-cy="search-bar"
             placeholder="Search your favourite songs here..."
-            onChange={e => this.setState({ searchMsg: e.target.value })}
+            onChange={e => this.setState({ searchMsg: e.target.value, currentPageNum: 1 })}
           />
           <StyledSelect
             data-cy="select-dropdown"
-            onChange={selectedOption => this.setState({ level: selectedOption.value })}
+            onChange={selectedOption =>
+              this.setState({ level: selectedOption.value, currentPageNum: 1 })
+            }
             placeholder="Select level"
             classNamePrefix="react-select"
             name="simpleSelect"
