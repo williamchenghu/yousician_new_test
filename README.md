@@ -1,6 +1,6 @@
 This is a web app for the list of songs and musics in database. This project was designed thoroughly to satisfy common requirements in a real environment, future scalability and features extensability.
 
-You will find some quick info blow on how to perform common tasks, as well as info regarding this specific project.<br>
+You will find some quick info blew on how to perform common tasks, as well as info regarding this specific project.<br>
 
 ## Table of Contents
 
@@ -72,7 +72,7 @@ Open [http://localhost:9001](http://localhost:9001) to view it in the browser.
 ### `yarn run test-e2e`
 
 Launches the test runner in the interactive watch mode.<br>
-**Note: In order to run cypress, always keep the project runing on [http://localhost:3000](http://localhost:3000) before hand**
+**Note: In order to run cypress, always keep the project runing on [http://localhost:3000](http://localhost:3000) beforehand**
 
 ## Main libraries
 
