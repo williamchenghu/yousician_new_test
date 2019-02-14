@@ -66,11 +66,14 @@ class SongList extends PureComponent<Props, State> {
     getSongList();
   };
 
+  // search keywords
   searchFilter = (song: Song, searchMsg: string) =>
     song.title.toUpperCase().includes(searchMsg.toUpperCase());
 
+  // level filter
   levelFilter = (song: Song, level: number) => (level === 15 ? true : song.level <= level + 1);
 
+  // page filter
   pageFilter = (currentPageNumber: number, index: number): boolean =>
     (currentPageNumber - 1) * 5 <= index && index < currentPageNumber * 5;
 
