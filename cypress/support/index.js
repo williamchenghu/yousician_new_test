@@ -15,7 +15,7 @@
 
 // slow down the speed of each action
 
-const COMMAND_DELAY = 1500;
+const COMMAND_DELAY = 500;
 
 // eslint-disable-next-line no-restricted-syntax
 for (const command of ['visit', 'click', 'trigger', 'type', 'clear', 'reload', 'contains']) {
