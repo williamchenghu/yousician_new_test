@@ -4,6 +4,9 @@ import SongGridCmp from './SongGridCmp';
 import styled from 'styled-components';
 import InputBase from '@material-ui/core/InputBase';
 import type { Songs } from '../../common/type/songs';
+import LevelDropdownOptionList from '../../common/utils/list';
+import StyledSelect from '../../common/styled_components/SimpleSelect';
+import StyledSearchBar from '../../common/styled_components/StyledSearchBar';
 
 const SongPage = styled.div`
   padding:${props => props.theme.space.inline.l}
@@ -11,11 +14,9 @@ const SongPage = styled.div`
   margin: auto;
 `;
 
-const StyledSearchBar = styled(InputBase)`
-  width: 80%;
-  background: ${props => props.theme.color.background.light};
-  padding: ${props => props.theme.space.square.s};
-  margin: ${props => props.theme.space.inline.s};
+const ActionBar = styled.div`
+  width: 100%;
+  display: inline-flex;
 `;
 
 type Props = {
@@ -40,10 +41,21 @@ class getSongList extends PureComponent<Props, State> {
     const { searchMsg } = this.state;
     return (
       <SongPage>
-        <StyledSearchBar
-          placeholder="Search your favourite songs here..."
-          onChange={e => this.setState({ searchMsg: e.target.value })}
-        />
+        <ActionBar>
+          <StyledSearchBar
+            placeholder="Search your favourite songs here..."
+            onChange={e => this.setState({ searchMsg: e.target.value })}
+          />
+          <StyledSelect
+            onChange={selectedOption => {}}
+            className="basic-single"
+            classNamePrefix="react-select"
+            name="simpleSelect"
+            options={LevelDropdownOptionList()}
+            isSearchable={false}
+          />
+        </ActionBar>
+
         {songList
           .valueSeq()
           .map(
