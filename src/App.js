@@ -4,6 +4,7 @@ import ThemeProvider from './common/theme/ThemeProvider';
 import main from './common/theme/theme';
 import configureStore from './store';
 import SongListContainer from './songListPage/containers/SongListContainer';
+import ErrorMessage from './message/errorMessage/ErrorMessageContainer';
 
 class App extends Component {
   componentDidMount = () => {};
@@ -12,6 +13,7 @@ class App extends Component {
       <Provider store={configureStore()}>
         <ThemeProvider>
           <SongListContainer />
+          <ErrorMessage />
         </ThemeProvider>
       </Provider>
     );

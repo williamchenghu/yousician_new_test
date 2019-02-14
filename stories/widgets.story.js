@@ -4,6 +4,7 @@ import LevelChartCmp from '../src/common/components/LevelChartCmp';
 import RatingCmp from '../src/common/components/RatingCmp';
 import PaginationCmp from '../src/common/components/PaginationCmp';
 import LogoCmp from '../src/common/components/LogoCmp';
+import SnackbarCmp from '../src/common/components/SnackBarCmp';
 import ProgressBar from '../src/common/styled_components/ProgressBar';
 
 storiesOf('Widgets', module)
@@ -43,5 +44,17 @@ storiesOf('Widgets', module)
     <div>
       <p>Progress Bar</p>
       <ProgressBar />
+    </div>
+  ))
+  .add('Snack Bar success', () => (
+    <div>
+      <p>Success snack bar</p>
+      <SnackbarCmp message="This is success msg" type="success" status={true} onClose={() => {}} />
+    </div>
+  ))
+  .add('Snack Bar', () => (
+    <div>
+      <p>Error snack bar</p>
+      <SnackbarCmp message="This is error msg" status={true} onClose={() => {}} />
     </div>
   ));

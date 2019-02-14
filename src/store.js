@@ -2,9 +2,11 @@ import { combineReducers, createStore, applyMiddleware, compose } from 'redux';
 import thunk from 'redux-thunk';
 import promiseMiddleware from 'redux-promise-middleware';
 import songlist from './duck/songlist';
+import common from './duck/common';
 
 const rootReducer = combineReducers({
-  songlist
+  songlist,
+  common
 });
 
 const enhancers = [];

@@ -69,7 +69,8 @@ const main = {
       primary: colors.green[600],
       secondary: colors.green[200],
       dark: colors.gray[200],
-      light: colors.gray[100]
+      light: colors.gray[100],
+      error: colors.red[600]
     },
     transparent: {
       medium: 'rgba(0, 0, 0, 0.03)',

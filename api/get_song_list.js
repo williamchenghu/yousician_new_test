@@ -5,5 +5,6 @@ module.exports = {
   delay: 2000,
   method: 'GET',
   cache: false,
+  //status: 400
   template: template
 };

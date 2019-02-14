@@ -9,7 +9,7 @@ import StyledSelect from '../../common/styled_components/SimpleSelect';
 import StyledSearchBar from '../../common/styled_components/StyledSearchBar';
 import ProgressBar from '../../common/styled_components/ProgressBar';
 import PaginationCmp from '../../common/components/PaginationCmp';
-import configureStore from '../../store';
+import SnackbarCmp from '../../common/components/SnackBarCmp';
 
 const SongPage = styled.div`
   padding:${props => props.theme.space.inline.l}
@@ -32,7 +32,9 @@ type Props = {
   getSongList: Function,
   putRating: Function,
   songList: Songs,
-  isLoading: boolean
+  isLoading: boolean,
+  isSuccessRating: boolean,
+  restSuccessRating: Function
 };
 type State = {
   searchMsg: string,
@@ -71,7 +73,7 @@ class SongList extends PureComponent<Props, State> {
   };
 
   render() {
-    const { songList, isLoading } = this.props;
+    const { songList, isLoading, isSuccessRating, restSuccessRating } = this.props;
     const { searchMsg, level, currentPageNum } = this.state;
     return (
       <SongPage>
@@ -90,11 +92,9 @@ class SongList extends PureComponent<Props, State> {
           />
         </ActionBar>
         {isLoading && <ProgressBar />}
-
         {!isLoading && this.prepareSongList(songList, searchMsg, level).length < 1 && (
           <div>No results to show:(</div>
         )}
-
         {this.prepareSongList(songList, searchMsg, level).map(
           (song, index) =>
             this.pageFilter(currentPageNum, index) && (
@@ -105,13 +105,18 @@ class SongList extends PureComponent<Props, State> {
               />
             )
         )}
-
         <PaginationCmp
           currentPageNum={currentPageNum}
           listLength={this.prepareSongList(songList, searchMsg, level).length}
           onChangeCurrentPage={pageNumber => {
             this.setState({ currentPageNum: pageNumber });
           }}
+        />
+        <SnackbarCmp
+          status={isSuccessRating}
+          message="Successful rating"
+          onClose={restSuccessRating}
+          type="success"
         />
       </SongPage>
     );

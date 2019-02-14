@@ -17,11 +17,5 @@ export default {
     }, OrderedMap());
   },
 
-  putRating: async (song: Song): Promise<Object> => {
-    await put('/rating', song);
-    return {
-      key: song.key,
-      rating: song.rating
-    };
-  }
+  putRating: async (song: Song): Promise<Object> => put('/rating', song)
 };
