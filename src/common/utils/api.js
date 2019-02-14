@@ -7,3 +7,4 @@ const instance = axios.create({
 });
 
 export const get = (endPoint, params = {}) => instance.get(endPoint, { params }).then(r => r.data);
+export const put = (endPoint, body = {}) => instance.put(endPoint, body).then(r => r.data);

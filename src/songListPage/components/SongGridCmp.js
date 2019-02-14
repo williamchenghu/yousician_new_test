@@ -33,7 +33,7 @@ const SongGridCmp = ({ songDetails, onChangeRating }: Props) => {
       <SongDetail>
         <h2>{songDetails.title}</h2>
         <div>
-          <RatingCmp rating={songDetails.rating} changeRate={() => {}} />
+          <RatingCmp rating={songDetails.rating} changeRate={onChangeRating(songDetails)} />
           {songDetails.artist}
         </div>
       </SongDetail>

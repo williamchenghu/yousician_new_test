@@ -16,6 +16,7 @@ const defaultState = Record({
 });
 
 export const getSongList = createAction('GET_SONG_LIST', apiService.getSongList);
+export const putRating = createAction('PUT_SONG_RATING', apiService.putRating);
 
 export default function signerReducer(state: DefaultState = defaultState(), action: ActionType) {
   const { type, payload } = action;
@@ -23,6 +24,9 @@ export default function signerReducer(state: DefaultState = defaultState(), acti
   switch (type) {
     case 'GET_SONG_LIST_FULFILLED':
       return state.set('songList', payload);
+
+    case 'PUT_SONG_RATING_FULFILLED':
+      return state.setIn(['songList', payload.key, 'rating'], payload.rating);
 
     default:
       return state;

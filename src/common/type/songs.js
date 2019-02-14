@@ -8,7 +8,8 @@ export type SongProps = {
   title: string,
   level: number,
   released: Date,
-  rating: number
+  rating: number,
+  key: string
 };
 
 export type Song = RecordOf<SongProps>;

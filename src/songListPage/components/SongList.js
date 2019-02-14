@@ -29,6 +29,7 @@ const ActionBar = styled.div`
 
 type Props = {
   getSongList: Function,
+  putRating: Function,
   songList: Songs
 };
 type State = {
@@ -43,30 +44,29 @@ class SongList extends PureComponent<Props, State> {
     currentPageNum: 1
   };
 
-  componentDidMount() {
+  componentDidMount = () => {
     const { getSongList } = this.props;
     getSongList();
-  }
+  };
 
-  searchFilter(song: Song, searchMsg: string) {
-    return song.title.toUpperCase().includes(searchMsg.toUpperCase());
-  }
+  searchFilter = (song: Song, searchMsg: string) =>
+    song.title.toUpperCase().includes(searchMsg.toUpperCase());
 
-  levelFilter(song: Song, level: number) {
-    if (level === 15) return true;
-    return song.level <= level + 1;
-  }
+  levelFilter = (song: Song, level: number) => (level === 15 ? true : song.level <= level + 1);
 
-  pageFilter(currentPageNumber: number, index: number): boolean {
-    return (currentPageNumber - 1) * 5 <= index && index < currentPageNumber * 5;
-  }
+  pageFilter = (currentPageNumber: number, index: number): boolean =>
+    (currentPageNumber - 1) * 5 <= index && index < currentPageNumber * 5;
 
-  prepareSongList(songList: Songs, searchMsg: string, level: number) {
-    return songList
+  prepareSongList = (songList: Songs, searchMsg: string, level: number) =>
+    songList
       .valueSeq()
       .filter(song => this.searchFilter(song, searchMsg) && this.levelFilter(song, level))
       .toArray();
-  }
+
+  onChangeRating = (songDetails: Song) => (rate: number) => {
+    const { putRating } = this.props;
+    putRating({ ...songDetails, rating: rate });
+  };
 
   render() {
     const { songList } = this.props;
@@ -94,7 +94,11 @@ class SongList extends PureComponent<Props, State> {
         {this.prepareSongList(songList, searchMsg, level).map(
           (song, index) =>
             this.pageFilter(currentPageNum, index) && (
-              <SongGridCmp key={song.title} songDetails={song} onChangeRating={() => {}} />
+              <SongGridCmp
+                key={song.title}
+                songDetails={song}
+                onChangeRating={this.onChangeRating}
+              />
             )
         )}
 
