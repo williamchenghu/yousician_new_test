@@ -59,6 +59,7 @@ const main = {
       light: colors.neutral[0]
     },
     background: {
+      light: colors.neutral[0],
       black: colors.neutral[1000],
       primary: colors.green[600],
       transparent: 'transparent'

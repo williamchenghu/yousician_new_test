@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import RatingCmp from '../../common/components/RatingCmp';
 import LevelChartCmp from '../../common/components/LevelChartCmp';
 import LogoCmp from '../../common/components/LogoCmp';
-import type { SongProps } from '../../common/type/songs';
+import type { Song } from '../../common/type/songs';
 
 const SongGrid = styled.div`
   width:100%;
@@ -22,7 +22,7 @@ const SongDetail = styled.div`
 
 type Props = {
   onChangeRating: Function,
-  songDetails: SongProps
+  songDetails: Song
 };
 
 const SongGridCmp = ({ songDetails, onChangeRating }: Props) => {

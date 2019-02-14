@@ -11,5 +11,5 @@ export type SongProps = {
   rating: number
 };
 
-type Song = RecordOf<SongProps>;
+export type Song = RecordOf<SongProps>;
 export type Songs = OrderedMap<Key, Song>;
