@@ -1,6 +1,6 @@
-This is a web app for the list of songs and musics in database. This project was designed thoroughly to satisfy both future scalability and feature extensabilities.
+This is a web app for the list of songs and musics in database. This project was designed thoroughly to satisfy common requirements in a real environment, future scalability and features extensability.
 
-Below you will find some information on how to perform common tasks.<br>
+You will find some quick info blow on how to perform common tasks, as well as info regarding this specific project.<br>
 
 ## Table of Contents
 
@@ -15,7 +15,7 @@ Below you will find some information on how to perform common tasks.<br>
 
 ## Folder Structure
 
-After creation, your project should look like this:
+After creation, the project should look like this:
 
 ```
 my-app/
@@ -78,6 +78,7 @@ Launches the test runner in the interactive watch mode.<br>
 
 - React: [A JavaScript library for building user interfaces](https://reactjs.org/)
 - Redux: [Redux is a predictable state container for JavaScript apps](https://redux.js.org/)
+- Immutable.js:[ Immutable.js provides many Persistent Immutable data structures ](https://facebook.github.io/immutable-js/)
 - Redux-actions: [Flux Standard Action utilities for Redux](https://github.com/redux-utilities/redux-actions)
 - Storybook: [Storybook is a development environment for UI components.](https://github.com/storybooks/storybook)
 - Styled-components: [Use the best bits of ES6 and CSS to style your apps without stress](https://www.styled-components.com/)
