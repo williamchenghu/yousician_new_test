@@ -21,6 +21,7 @@ const fonts = {
       xl: '2.25em'
     },
     body: {
+      xs: '0.5em',
       s: '0.75em',
       m: '1em',
       l: '1.333em',

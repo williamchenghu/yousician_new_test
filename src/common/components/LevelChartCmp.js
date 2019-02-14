@@ -5,7 +5,9 @@ import styled from 'styled-components';
 
 const Donut = styled.div`
   max-height: 100px;
+
   & > *:first-child {
+    margin-top: 1em;
     height: ${props => props.theme.space.single.xl};
   }
   & > *:last-child {

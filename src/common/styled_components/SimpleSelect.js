@@ -7,7 +7,7 @@ import Select from 'react-select';
 const StyledSelect = styled(Select)`
   margin: auto;
   .react-select__control {
-    border-radius: ${props => props.theme.border.type.round};
+    border-radius:0;
     padding:${props => props.theme.space.square.s}
     font-size: ${props => props.theme.fonts.size.body.s}
     background-color: white;

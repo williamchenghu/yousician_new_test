@@ -9,14 +9,40 @@ import type { Song } from '../../common/type/songs';
 const SongGrid = styled.div`
   width:100%;
   text-align: center;
-  display: flex;
+  display: inline-flex;
   padding: ${props => props.theme.space.square.xs}
   border:1px solid ${props => props.theme.color.border.primary};
+
+  & > *{
+    margin: auto;
+    min-width:10%;
+    vertical-align: middle;
+    margin-left: ${props => props.theme.space.square.xs}
+  }
+  
+  & > *:first-child {
+    flex-grow:0;
+  }
+  & > *:last-child {
+    text-align: left
+    min-width: 50%;
+    flex-grow:3;
+  }
 `;
 
-const SongDetail = styled.div`
-  * {
-    text-align: left;
+const InfoBox = styled.div`
+  p {
+    color: ${props => props.theme.color.text.dark};
+  }
+  svg {
+    color: ${props => props.theme.color.icon.dark};
+  }
+  display: inline-flex;
+  & > * {
+    margin-right: ${props => props.theme.space.square.xs};
+  }
+  @media only screen and (max-width: 768px) {
+    display: inline-block;
   }
 `;
 
@@ -29,14 +55,14 @@ const SongGridCmp = ({ songDetails, onChangeRating }: Props) => {
   return (
     <SongGrid>
       <LogoCmp />
-      <LevelChartCmp level={songDetails.level} />
-      <SongDetail>
-        <h2>{songDetails.title}</h2>
-        <div>
+      <LevelChartCmp className="donut" level={songDetails.level} />
+      <div>
+        <p>{songDetails.title}</p>
+        <InfoBox>
           <RatingCmp rating={songDetails.rating} changeRate={onChangeRating(songDetails)} />
-          {songDetails.artist}
-        </div>
-      </SongDetail>
+          <p>{songDetails.artist}</p>
+        </InfoBox>
+      </div>
     </SongGrid>
   );
 };

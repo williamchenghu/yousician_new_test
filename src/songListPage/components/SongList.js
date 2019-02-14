@@ -15,16 +15,30 @@ const SongPage = styled.div`
   padding:${props => props.theme.space.inline.l}
   max-width: 80%;
   margin: auto;
+  @media only screen and (max-width: 768px) {
+    max-width: 100%;
+  }
+}
+
 `;
 
 const ActionBar = styled.div`
   width: 100%;
   display: inline-flex;
   & > *:first-child {
-    width: 70%;
+    width: 65%;
   }
   & > *:last-child {
-    width: 20%;
+    width: 30%;
+  }
+  @media only screen and (max-width: 768px) {
+    display: inline-block;
+    & > *:first-child {
+      width: 100%;
+    }
+    & > *:last-child {
+      width: 100%;
+    }
   }
 `;
 
@@ -89,6 +103,7 @@ class SongList extends PureComponent<Props, State> {
             name="simpleSelect"
             options={LevelDropdownOptionList()}
             isSearchable={false}
+            defaultValue={LevelDropdownOptionList().pop()}
           />
         </ActionBar>
         {isLoading && <ProgressBar />}
