@@ -31,7 +31,8 @@ const fonts = {
 
 const colors = {
   green: {
-    '600': '#4fc514'
+    '600': '#4fc514',
+    '200': '#DBF3D0'
   },
   gray: {
     '300': '#404248',
@@ -66,6 +67,7 @@ const main = {
     },
     icon: {
       primary: colors.green[600],
+      secondary: colors.green[200],
       dark: colors.gray[200],
       light: colors.gray[100]
     },

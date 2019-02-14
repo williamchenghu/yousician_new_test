@@ -4,6 +4,7 @@ import LevelChartCmp from '../src/common/components/LevelChartCmp';
 import RatingCmp from '../src/common/components/RatingCmp';
 import PaginationCmp from '../src/common/components/PaginationCmp';
 import LogoCmp from '../src/common/components/LogoCmp';
+import ProgressBar from '../src/common/styled_components/ProgressBar';
 
 storiesOf('Widgets', module)
   .add('Level', () => (
@@ -36,5 +37,11 @@ storiesOf('Widgets', module)
     <div>
       <p>Pagination</p>
       <PaginationCmp currentPageNum={1} listLength={20} onChangeCurrentPage={() => {}} />
+    </div>
+  ))
+  .add('Progress Bar', () => (
+    <div>
+      <p>Progress Bar</p>
+      <ProgressBar />
     </div>
   ));

@@ -7,6 +7,7 @@ import type { Songs, Song } from '../../common/type/songs';
 import LevelDropdownOptionList from '../../common/utils/list';
 import StyledSelect from '../../common/styled_components/SimpleSelect';
 import StyledSearchBar from '../../common/styled_components/StyledSearchBar';
+import ProgressBar from '../../common/styled_components/ProgressBar';
 import PaginationCmp from '../../common/components/PaginationCmp';
 import configureStore from '../../store';
 
@@ -30,7 +31,8 @@ const ActionBar = styled.div`
 type Props = {
   getSongList: Function,
   putRating: Function,
-  songList: Songs
+  songList: Songs,
+  isLoading: boolean
 };
 type State = {
   searchMsg: string,
@@ -69,7 +71,7 @@ class SongList extends PureComponent<Props, State> {
   };
 
   render() {
-    const { songList } = this.props;
+    const { songList, isLoading } = this.props;
     const { searchMsg, level, currentPageNum } = this.state;
     return (
       <SongPage>
@@ -87,7 +89,9 @@ class SongList extends PureComponent<Props, State> {
             isSearchable={false}
           />
         </ActionBar>
-        {this.prepareSongList(songList, searchMsg, level).length < 1 && (
+        {isLoading && <ProgressBar />}
+
+        {!isLoading && this.prepareSongList(songList, searchMsg, level).length < 1 && (
           <div>No results to show:(</div>
         )}
 

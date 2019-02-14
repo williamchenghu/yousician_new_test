@@ -22,8 +22,14 @@ export default function signerReducer(state: DefaultState = defaultState(), acti
   const { type, payload } = action;
 
   switch (type) {
+    case 'GET_SONG_LIST_PENDING':
+      return state.set('isLoading', true);
+
+    case 'GET_SONG_LIST_REJECTED':
+      return state.set('isLoading', false);
+
     case 'GET_SONG_LIST_FULFILLED':
-      return state.set('songList', payload);
+      return state.set('songList', payload).set('isLoading', false);
 
     case 'PUT_SONG_RATING_FULFILLED':
       return state.setIn(['songList', payload.key, 'rating'], payload.rating);
