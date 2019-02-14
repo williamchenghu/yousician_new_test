@@ -1,10 +1,10 @@
 const px = {
   none: '0px',
   xs: '8px',
-  s: '16px',
-  m: '32px',
-  l: '64px',
-  xl: '96px'
+  s: '12px',
+  m: '24px',
+  l: '32px',
+  xl: '64px'
 };
 
 const fonts = {
@@ -71,6 +71,9 @@ const main = {
     transparent: {
       medium: 'rgba(0, 0, 0, 0.03)',
       light: 'rgba(0, 0, 0, 0.015)'
+    },
+    border: {
+      primary: colors.gray[200]
     }
   },
   space: {
@@ -108,7 +111,7 @@ const main = {
   border: {
     type: {
       default: '0',
-      round: '5px'
+      round: '10px'
     }
   }
 };

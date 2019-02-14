@@ -8,7 +8,7 @@ type Props = {
   rating: number,
   changeRate: Function
 };
-const RatingCmp = ({ rating, changeRate }) => (
+const RatingCmp = ({ rating, changeRate }: Props) => (
   <Rating
     id="rating"
     initialRating={rating}

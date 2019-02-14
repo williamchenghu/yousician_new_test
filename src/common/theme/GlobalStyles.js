@@ -26,25 +26,18 @@ export default createGlobalStyle`
 
   h1 {
     font-family: ${props => props.theme.fonts.family.heading};
-    font-size: ${props => props.theme.fonts.family.body.xl};
-    color: ${props => props.theme.color.heading.dark};
-    font-style: italic;
+    font-size: ${props => props.theme.fonts.family.heading.l};
+    color: ${props => props.theme.color.heading.light};
     line-height: 1.33;
     letter-spacing: -0.4px;
   }
 
   h2 {
     font-family: ${props => props.theme.fonts.family.heading};
-    font-size: ${props => props.theme.fonts.family.body.l};
-    color: ${props => props.theme.color.heading.dark};
-    letter-spacing: -0.3px;
+    font-weight: 300;
+    margin: 0;
+    line-height: 1.33;
+    letter-spacing: -0.4px;
   }
-
-  h3 {
-    font-family: ${props => props.theme.fonts.family.heading};
-    font-size: ${props => props.theme.fonts.family.body.l};
-    color: ${props => props.theme.color.heading.neural};
-    font-style: italic;
-    letter-spacing: -0.3px;
-  }
+ 
 `;

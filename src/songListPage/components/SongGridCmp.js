@@ -7,21 +7,16 @@ import LogoCmp from '../../common/components/LogoCmp';
 import type { SongProps } from '../../common/type/songs';
 
 const SongGrid = styled.div`
+  width:100%;
   text-align: center;
   display: flex;
-  max-width: 60%;
-  margin-top: ${props => props.theme.space.single.l};
+  padding: ${props => props.theme.space.square.xs}
+  border:1px solid ${props => props.theme.color.border.primary};
+`;
+
+const SongDetail = styled.div`
   * {
-    flex-grow: 1;
-    text-align: center;
-    flex-shrink: 0;
-    margin: auto;
-  }
-  & > *:first-child {
-    flex-grow: ${props => props.theme.space.single.xl};
-  }
-  & > *:last-child {
-    flex-grow: 0;
+    text-align: left;
   }
 `;
 
@@ -35,16 +30,13 @@ const SongGridCmp = ({ songDetails, onChangeRating }: Props) => {
     <SongGrid>
       <LogoCmp />
       <LevelChartCmp level={songDetails.level} />
-      <div>
-        <div>{songDetails.title}</div>
+      <SongDetail>
+        <h2>{songDetails.title}</h2>
         <div>
-          <div>
-            <RatingCmp rating={songDetails.rating} changeRate={() => {}} />
-          </div>
-
-          <div>{songDetails.artist}</div>
+          <RatingCmp rating={songDetails.rating} changeRate={() => {}} />
+          {songDetails.artist}
         </div>
-      </div>
+      </SongDetail>
     </SongGrid>
   );
 };

@@ -4,6 +4,7 @@ import PieChart from 'react-minimal-pie-chart';
 import styled from 'styled-components';
 
 const Donut = styled.div`
+  max-height: 100px;
   & > *:first-child {
     height: ${props => props.theme.space.single.xl};
   }
