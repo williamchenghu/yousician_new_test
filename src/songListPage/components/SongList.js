@@ -89,13 +89,15 @@ class SongList extends PureComponent<Props, State> {
     const { songList, isLoading, isSuccessRating, restSuccessRating } = this.props;
     const { searchMsg, level, currentPageNum } = this.state;
     return (
-      <SongPage>
+      <SongPage data-cy="song-page">
         <ActionBar>
           <StyledSearchBar
+            data-cy="search-bar"
             placeholder="Search your favourite songs here..."
             onChange={e => this.setState({ searchMsg: e.target.value })}
           />
           <StyledSelect
+            data-cy="select-dropdown"
             onChange={selectedOption => this.setState({ level: selectedOption.value })}
             placeholder="Select level"
             classNamePrefix="react-select"
@@ -105,7 +107,7 @@ class SongList extends PureComponent<Props, State> {
             defaultValue={LevelDropdownOptionList().pop()}
           />
         </ActionBar>
-        {isLoading && <ProgressBar />}
+        {isLoading && <ProgressBar data-cy="progress-bar" />}
         {!isLoading && this.prepareSongList(songList, searchMsg, level).length < 1 && (
           <div>No results to show:(</div>
         )}
@@ -122,9 +124,7 @@ class SongList extends PureComponent<Props, State> {
         <PaginationCmp
           currentPageNum={currentPageNum}
           listLength={this.prepareSongList(songList, searchMsg, level).length}
-          onChangeCurrentPage={pageNumber => {
-            this.setState({ currentPageNum: pageNumber });
-          }}
+          onChangeCurrentPage={pageNumber => this.setState({ currentPageNum: pageNumber })}
         />
         <SnackbarCmp
           status={isSuccessRating}

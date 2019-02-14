@@ -44,6 +44,7 @@ const PaginationCmp = ({ currentPageNum, listLength, onChangeCurrentPage }: Prop
         {Array.from(Array(totalPageNumber).keys(), number => number + 1).map((page, index) => {
           return (
             <StyledNumber
+              data-cy="page-number"
               key={index}
               highlight={currentPageNum === page}
               onClick={() => {
@@ -57,6 +58,7 @@ const PaginationCmp = ({ currentPageNum, listLength, onChangeCurrentPage }: Prop
         {/* if it is not last page show pre page button */}
         {currentPageNum !== totalPageNumber && (
           <StyledNumber
+            data-cy="page-number-next"
             onClick={() => {
               onChangeCurrentPage(currentPageNum + 1);
             }}

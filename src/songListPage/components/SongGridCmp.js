@@ -56,7 +56,7 @@ const SongGridCmp = ({ songDetails, onChangeRating }: Props) => {
     <SongGrid>
       <LogoCmp />
       <LevelChartCmp className="donut" level={songDetails.level} />
-      <div>
+      <div data-cy="song-info">
         <p>{songDetails.title}</p>
         <InfoBox>
           <RatingCmp rating={songDetails.rating} changeRate={onChangeRating(songDetails)} />
