@@ -1,9 +1,9 @@
 //@ flow
 const LevelDropdownOptionList = () => {
   const level = 15;
-  return Array.from(Array(10).keys()).reduce((acc, i) => {
+  return Array.from(Array(level).keys()).reduce((acc, i) => {
     acc.push({
-      label: `Level ${i + 1}`,
+      label: `Easier than Level ${i + 1}`,
       value: i
     });
     return acc;

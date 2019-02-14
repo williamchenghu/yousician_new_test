@@ -20,9 +20,10 @@ const StyledSelect = styled(Select)`
   .react-select__option--is-selected {
     background: ${props => props.theme.color.background.primary};
   }
+ 
   .react-select__option {
     padding:${props => props.theme.space.square.s};
-    font-size: ${props => props.theme.fonts.size.body.s},
+    font-size: ${props => props.theme.fonts.size.body.s};
     color: ${props => props.theme.color.text.dark};
     &:hover,
     &:focus {

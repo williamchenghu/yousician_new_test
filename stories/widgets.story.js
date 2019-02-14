@@ -2,6 +2,7 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import LevelChartCmp from '../src/common/components/LevelChartCmp';
 import RatingCmp from '../src/common/components/RatingCmp';
+import PaginationCmp from '../src/common/components/PaginationCmp';
 import LogoCmp from '../src/common/components/LogoCmp';
 
 storiesOf('Widgets', module)
@@ -29,5 +30,11 @@ storiesOf('Widgets', module)
     <div>
       <p>Company logo</p>
       <LogoCmp />
+    </div>
+  ))
+  .add('Pagination', () => (
+    <div>
+      <p>Pagination</p>
+      <PaginationCmp currentPageNum={1} listLength={20} onChangeCurrentPage={() => {}} />
     </div>
   ));

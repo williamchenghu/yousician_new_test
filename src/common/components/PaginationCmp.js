@@ -1,6 +1,6 @@
 // @ flow
 import React from 'react';
-import PropTypes from 'prop-types';
+import styled from 'styled-components';
 
 type Props = {
   onChangeCurrentPage: Function,
@@ -8,56 +8,64 @@ type Props = {
   currentPageNum: number
 };
 
-const PaginationCmp = ({ currentPageNum, listLength, onChangeCurrentPage }) => {
-  //show five items in each page
-  let totalPageNumber = Math.ceil(listLength / 5);
-  let renderList = [];
-  for (let i = 1; i <= totalPageNumber; i++) {
-    renderList.push({
-      pageNumber: i
-    });
-  }
-  return (
-    <div className="pagination">
-      {/* if it is not first page show next page button */}
-      {currentPageNum !== 1 ? (
-        <div
-          id="pre"
-          className="number"
-          onClick={() => {
-            onChangeCurrentPage(currentPageNum - 1);
-          }}
-        >
-          &lt;
-        </div>
-      ) : null}
+const StyledPagination = styled.div`
+  display: block;
+  text-align: center;
+  margin: 1em 0em;
+`;
 
-      {renderList.map((page, index) => {
-        return (
-          <div
-            key={index}
-            className={`number ${currentPageNum === page.pageNumber ? 'high-light' : ''}`}
+const StyledNumber = styled.div`
+  margin: 0em 0.2em;
+  display: inline-block;
+  vertical-align: middle;
+  border: 0.1em ${props => props.theme.color.border.primary} solid;
+  padding: 0.5em;
+  cursor: pointer;
+  color: ${props => (props.highlight ? props.theme.color.background.primary : 'inherit')};
+`;
+
+const PaginationCmp = ({ currentPageNum, listLength, onChangeCurrentPage }: Props) => {
+  //show five items in each page
+  const totalPageNumber = Math.ceil(listLength / 5);
+  return (
+    listLength !== 0 && (
+      <StyledPagination>
+        {/* if it is not first page show next page button */}
+        {currentPageNum !== 1 && (
+          <StyledNumber
             onClick={() => {
-              onChangeCurrentPage(page.pageNumber);
+              onChangeCurrentPage(currentPageNum - 1);
             }}
           >
-            {page.pageNumber}
-          </div>
-        );
-      })}
-      {/* if it is not last page show pre page button */}
-      {currentPageNum !== totalPageNumber ? (
-        <div
-          id="next"
-          className="number"
-          onClick={() => {
-            onChangeCurrentPage(currentPageNum + 1);
-          }}
-        >
-          &gt;
-        </div>
-      ) : null}
-    </div>
+            &lt;
+          </StyledNumber>
+        )}
+
+        {Array.from(Array(totalPageNumber).keys(), number => number + 1).map((page, index) => {
+          return (
+            <StyledNumber
+              key={index}
+              highlight={currentPageNum === page}
+              onClick={() => {
+                onChangeCurrentPage(page);
+              }}
+            >
+              {page}
+            </StyledNumber>
+          );
+        })}
+        {/* if it is not last page show pre page button */}
+        {currentPageNum !== totalPageNumber && (
+          <StyledNumber
+            onClick={() => {
+              onChangeCurrentPage(currentPageNum + 1);
+            }}
+          >
+            &gt;
+          </StyledNumber>
+        )}
+      </StyledPagination>
+    )
   );
 };
 
