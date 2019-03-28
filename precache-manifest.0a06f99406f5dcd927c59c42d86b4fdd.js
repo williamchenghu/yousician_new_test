@@ -8,15 +8,15 @@ self.__precacheManifest = [
     "url": "/yousician_new_test/static/js/runtime~main.48af3378.js"
   },
   {
-    "revision": "62776258610f62acc08d",
-    "url": "/yousician_new_test/static/js/main.62776258.chunk.js"
+    "revision": "1697634bc0b745c85925",
+    "url": "/yousician_new_test/static/js/main.1697634b.chunk.js"
   },
   {
-    "revision": "1fba66fdce1dbab98879",
-    "url": "/yousician_new_test/static/js/2.1fba66fd.chunk.js"
+    "revision": "0a13fa9b36fc341c75fb",
+    "url": "/yousician_new_test/static/js/2.0a13fa9b.chunk.js"
   },
   {
-    "revision": "737e2866b437c5dcb00dfd95c057a2e8",
+    "revision": "49cb59696fa7f6839e996cac96923fe6",
     "url": "/yousician_new_test/index.html"
   }
 ];

@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/yousician_new_test/precache-manifest.d8fc946ee4783a1aeadb77819ce1f1a8.js"
+  "/yousician_new_test/precache-manifest.0a06f99406f5dcd927c59c42d86b4fdd.js"
 );
 
 workbox.clientsClaim();
